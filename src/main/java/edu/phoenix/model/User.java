@@ -22,4 +22,17 @@ public class User {
   public String getPassword() {
     return password;
   }
+
+  public Boolean setUser(User user){
+    try{
+      this.name = user.getName();
+      this.login = user.getLogin();
+      this.password = user.getPassword();
+      return true;
+    }
+    catch (OutOfMemoryError e){
+      System.out.println("Память кончилась!");
+      return false;
+    }
+  }
 }
